@@ -149,7 +149,7 @@
             const valueTot = Number($('#price').val().replace('.', '').replace(',', '.'));
             console.log(valueTot);
             console.log(parcels);
-            const valueParcel = (Number(valueTot) / Number(parcels)).toFixed(2);
+            const valueParcel = Number((Number(valueTot) / Number(parcels)).toFixed(2)).toLocaleString('pt-br', {minimumFractionDigits: 2});
             let html = '';
             for(let i = 1; i <= parcels; i++){
                 if(i == 1){
@@ -165,11 +165,11 @@
                         </div>
                         <div class="form-col-3">
                             <label>Data</label>
-                            <input  required type="date" class="form-control" name="dataParcel${i}" value="${writeDate}">
+                            <input required type="date" class="form-control" name="dataParcel${i}" value="${writeDate}">
                         </div>
                         <div class="form-col-3">
                             <label>Valor</label>
-                            <input  required type="text" class="form-control" name="value${i}" value="${valueParcel}" placeholder="Valor">
+                            <input required type="text" class="form-control" name="value${i}" value="${valueParcel}" placeholder="Valor">
                         </div>
                         <div class="form-col-3">
                             <label>Observação</label>

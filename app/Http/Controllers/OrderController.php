@@ -77,9 +77,11 @@ class OrderController extends Controller
 
         if($data['parceled'] == 1){
             for ($i = 1; $i <= $data['amountParcels']; $i++) {
+                $val = str_replace('.', '', $data["value1"]);
+                $val = str_replace(',', '.', $val);
                 Parcel::create([
                     "order_id"   => $order->id,
-                    "value"      => str_replace(',', '.', str_replace('.', '', $data['value{$i}'])),
+                    "value"      => $val,
                     "expireDate" => $data["dataParcel{$i}"],
                     "obs"        => $data["obs{$i}"],
                 ]);
@@ -180,9 +182,11 @@ class OrderController extends Controller
 
         if($data['parceled'] == 1){
             for ($i = 1; $i <= $data['amountParcels']; $i++) {
+                $val = str_replace('.', '', $data["value1"]);
+                $val = str_replace(',', '.', $val);
                 Parcel::create([
                     "order_id"   => $order->id,
-                    "value"      => str_replace(',', '.', str_replace('.', '', $data["value{$i}"])),
+                    "value"      => $val,
                     "expireDate" => $data["dataParcel{$i}"],
                     "obs"        => $data["obs{$i}"],
                 ]);

@@ -168,8 +168,6 @@
             const parcels = $('#amountParcelsInput').val()
             const date = new Date();
             const valueTot = Number($('#price').val().replace('.', '').replace(',', '.'));
-            console.log(valueTot);
-            console.log(parcels);
             const valueParcel = Number((Number(valueTot) / Number(parcels)).toFixed(2)).toLocaleString('pt-br', {minimumFractionDigits: 2});
             let html = '';
             for(let i = 1; i <= parcels; i++){

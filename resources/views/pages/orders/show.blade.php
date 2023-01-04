@@ -63,7 +63,7 @@
                         <td>{{ str_pad($cont, 2, '0', STR_PAD_LEFT) }}</td>
                         <td>{{ date('d/m/Y', strtotime($parc->expireDate)) }}</td>
                         <td>R$ {{ number_format($parc->value, 2, ',', '.') }}</td>
-                        <td></td>
+                        <td>{{ $parc->obs }}</td>
                     </tr>
                 @endforeach
             </table>

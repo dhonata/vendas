@@ -16,8 +16,8 @@ class CreateOrder extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->enum('methodPayment', ['money', 'card', 'bankSlip', 'pix']);
-            $table->unsignedInteger('client_id');
-            $table->unsignedInteger('seller_id');
+            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('seller_id');
             $table->double('value');
             $table->boolean('parceled');
             $table->timestamps();

@@ -157,7 +157,7 @@
                 }else{
                     date.setMonth(date.getMonth() + 1);
                 }
-                let writeDate = date.getFullYear() + '-' + ((date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) + '-' + date.getDate();
+                let writeDate = date.getFullYear() + '-' + ((date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) + '-' + (date.getDate() < 10 ? `0${date.getDate()}` : date.getDate() );
                 html += `
                     <div class="form-row">
                         <div class="form-col-1" style="margin-top: 37px">
